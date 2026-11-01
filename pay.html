@@ -403,7 +403,10 @@
     //
     // Leave empty to keep online payment switched off — the page then shows the
     // "contact us to pay" notice instead of broken buttons.
-    var PAYMENT_API = '';
+    //
+    // While the backend is still being stood up this resolves but does not
+    // answer, and the page falls back to the "contact us" notice on its own.
+    var PAYMENT_API = 'https://api.carrier-networks.com';
 
     var payConfig = null;
 

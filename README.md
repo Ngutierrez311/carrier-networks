@@ -56,13 +56,13 @@ the payment API. `pay.html` talks to it over four endpoints:
 One line, at the top of the `<script>` block in `pay.html`:
 
 ```javascript
-var PAYMENT_API = '';
+var PAYMENT_API = 'https://api.carrier-networks.com';
 ```
 
-Set it to the payment API origin (for example
-`https://api.carrier-networks.com`) and commit. While it is empty the page hides
-the payment widgets and shows a "contact us to pay" notice instead, so the page
-is safe to deploy before the backend is ready.
+Set it to the payment API origin. It is currently
+`https://api.carrier-networks.com`, served by `carrier-networks-payment` in the
+cluster. While it is empty, or while the backend is unreachable, the page hides
+the payment widgets and shows a "contact us to pay" notice instead.
 
 The origin you set must also be on the payment API's CORS allowlist
 (`PAYMENT_ALLOWED_ORIGINS`), or the browser will block every call.
