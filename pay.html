@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pay — Carrier Networks</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <style>
+        .pay-hero {
+            background: linear-gradient(135deg, #000 0%, #0a1a0a 100%);
+            padding: 120px 15px 60px;
+            text-align: center;
+            color: #fff;
+        }
+        .pay-hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #00e676;
+            margin-bottom: 10px;
+        }
+        .pay-hero p {
+            color: rgba(255,255,255,0.6);
+            font-size: 16px;
+        }
+        .pay-section {
+            background: #111;
+            padding: 60px 0;
+            min-height: 60vh;
+        }
+        .pay-card {
+            background: #1a1a1a;
+            border: 1px solid rgba(0,230,118,0.15);
+            border-radius: 6px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        .pay-card h3 {
+            color: #00e676;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        .pay-card label {
+            color: rgba(255,255,255,0.8);
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .pay-card .form-control {
+            background: #222;
+            border: 1px solid rgba(0,230,118,0.2);
+            color: #fff;
+            border-radius: 4px;
+            height: 44px;
+            font-size: 16px;
+        }
+        .pay-card .form-control:focus {
+            border-color: #00e676;
+            box-shadow: 0 0 10px rgba(0,230,118,0.15);
+        }
+        .pay-card textarea.form-control {
+            height: auto;
+        }
+        .pay-tabs {
+            margin-bottom: 25px;
+        }
+        .pay-tabs .nav-tabs {
+            border-bottom: 2px solid rgba(0,230,118,0.2);
+        }
+        .pay-tabs .nav-tabs > li > a {
+            color: rgba(255,255,255,0.5);
+            border: none;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 13px;
+            padding: 12px 20px;
+            background: transparent;
+        }
+        .pay-tabs .nav-tabs > li > a:hover {
+            color: #fff;
+            border-bottom-color: rgba(0,230,118,0.4);
+            background: transparent;
+        }
+        .pay-tabs .nav-tabs > li.active > a,
+        .pay-tabs .nav-tabs > li.active > a:focus,
+        .pay-tabs .nav-tabs > li.active > a:hover {
+            color: #00e676;
+            border: none;
+            border-bottom: 2px solid #00e676;
+            background: transparent;
+        }
+        .tab-content {
+            padding-top: 20px;
+        }
+        .amount-display {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        .amount-display .label-text {
+            color: rgba(255,255,255,0.5);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .amount-display .amount {
+            color: #00e676;
+            font-size: 36px;
+            font-weight: 700;
+        }
+        .pay-offline-notice {
+            display: none;
+            margin: 0 0 25px;
+            padding: 18px 22px;
+            border: 1px solid #d9a406;
+            border-left: 4px solid #d9a406;
+            border-radius: 4px;
+            background: #fffaf0;
+            color: #6b5200;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        #paypal-button-container {
+            min-height: 50px;
+        }
+        .crypto-select {
+            margin-bottom: 15px;
+        }
+        .crypto-select select {
+            background: #222;
+            color: #fff;
+            border: 1px solid rgba(0,230,118,0.2);
+            padding: 10px;
+            width: 100%;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .crypto-info {
+            background: #222;
+            border: 1px solid rgba(0,230,118,0.15);
+            border-radius: 6px;
+            padding: 20px;
+            text-align: center;
+            display: none;
+        }
+        .crypto-info .address {
+            font-family: monospace;
+            font-size: 14px;
+            color: #00e676;
+            word-break: break-all;
+            padding: 10px;
+            background: #1a1a1a;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .crypto-info img {
+            max-width: 180px;
+            margin: 10px auto;
+            display: block;
+            border-radius: 4px;
+        }
+        .btn-pay {
+            background: #00e676;
+            color: #000;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            width: 100%;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .btn-pay:hover {
+            background: #00c853;
+            box-shadow: 0 0 20px rgba(0,230,118,0.3);
+            color: #000;
+        }
+        .btn-pay:disabled {
+            background: #333;
+            color: #666;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+        .status-msg {
+            text-align: center;
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+        .status-msg.success {
+            background: rgba(0,230,118,0.1);
+            border: 1px solid rgba(0,230,118,0.3);
+            color: #00e676;
+            display: block;
+        }
+        .status-msg.error {
+            background: rgba(230,0,0,0.1);
+            border: 1px solid rgba(230,0,0,0.3);
+            color: #ff5252;
+            display: block;
+        }
+        .status-msg.pending {
+            background: rgba(255,193,7,0.1);
+            border: 1px solid rgba(255,193,7,0.3);
+            color: #ffc107;
+            display: block;
+        }
+        .copy-btn {
+            background: transparent;
+            border: 1px solid rgba(0,230,118,0.3);
+            color: #00e676;
+            padding: 4px 12px;
+            border-radius: 3px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .copy-btn:hover {
+            background: rgba(0,230,118,0.1);
+        }
+        .note {
+            color: rgba(255,255,255,0.4);
+            font-size: 12px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="siteNav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <span class="glyphicon glyphicon-globe"></span>
+                    Carrier Networks
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="offerings.html">Offerings</a></li>
+                    <li class="active"><a href="pay.html">Pay</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pay-hero">
+        <h1>Invoice Payment</h1>
+        <p>Secure payments via PayPal, Card, or Cryptocurrency</p>
+    </div>
+
+    <section class="pay-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+
+                    <!-- Invoice Details -->
+                    <div class="pay-card">
+                        <h3>Payment Details</h3>
+                        <div class="form-group">
+                            <label>Invoice Number / Reference</label>
+                            <input type="text" class="form-control" id="invoiceRef" placeholder="INV-0001 or project name">
+                        </div>
+                        <div class="form-group">
+                            <label>Amount (USD)</label>
+                            <input type="number" class="form-control" id="payAmount" placeholder="0.00" min="1" step="0.01">
+                        </div>
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" class="form-control" id="payerName" placeholder="Name or Company">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" id="payerEmail" placeholder="email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Notes (optional)</label>
+                            <textarea class="form-control" id="payNotes" rows="2" placeholder="Any additional details"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Amount Display -->
+                    <div class="amount-display">
+                        <div class="label-text">Total Due</div>
+                        <div class="amount" id="totalDisplay">$0.00</div>
+                    </div>
+
+                    <div id="pay-offline-notice" class="pay-offline-notice"></div>
+
+                    <!-- Payment Methods -->
+                    <div class="pay-card" id="payment-methods">
+                        <h3>Payment Method</h3>
+                        <div class="pay-tabs">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#paypal-tab" role="tab" data-toggle="tab">PayPal</a></li>
+                                <li role="presentation"><a href="#crypto-tab" role="tab" data-toggle="tab">Crypto</a></li>
+                            </ul>
+                            <div class="tab-content">
+
+                                <!-- PayPal Tab -->
+                                <div role="tabpanel" class="tab-pane active" id="paypal-tab">
+                                    <p style="color:rgba(255,255,255,0.5);font-size:13px;margin-bottom:15px;">Pay with PayPal account or credit/debit card.</p>
+                                    <div id="paypal-button-container"></div>
+                                    <div id="paypal-status" class="status-msg"></div>
+                                </div>
+
+                                <!-- Crypto Tab -->
+                                <div role="tabpanel" class="tab-pane" id="crypto-tab">
+                                    <p style="color:rgba(255,255,255,0.5);font-size:13px;margin-bottom:15px;">Pay with 150+ cryptocurrencies via NOWPayments.</p>
+                                    <div class="crypto-select">
+                                        <select id="cryptoCurrency">
+                                            <option value="btc">Bitcoin (BTC)</option>
+                                            <option value="eth">Ethereum (ETH)</option>
+                                            <option value="ltc">Litecoin (LTC)</option>
+                                            <option value="usdttrc20">USDT (TRC20)</option>
+                                            <option value="usdterc20">USDT (ERC20)</option>
+                                            <option value="usdcsol">USDC (Solana)</option>
+                                            <option value="xrp">XRP</option>
+                                            <option value="sol">Solana (SOL)</option>
+                                            <option value="doge">Dogecoin (DOGE)</option>
+                                            <option value="ada">Cardano (ADA)</option>
+                                            <option value="matic">Polygon (MATIC)</option>
+                                            <option value="trx">TRON (TRX)</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn-pay" id="cryptoPayBtn" onclick="generateCryptoPayment()">Generate Payment Address</button>
+                                    <div id="crypto-info" class="crypto-info">
+                                        <p style="color:rgba(255,255,255,0.6);font-size:13px;">Send exactly:</p>
+                                        <div class="amount" id="cryptoAmount" style="font-size:24px;color:#00e676;"></div>
+                                        <p style="color:rgba(255,255,255,0.5);font-size:11px;margin-top:5px;" id="cryptoCurrLabel"></p>
+                                        <p style="color:rgba(255,255,255,0.6);font-size:13px;margin-top:15px;">To this address:</p>
+                                        <div class="address" id="cryptoAddress"></div>
+                                        <button class="copy-btn" onclick="copyAddress()">Copy Address</button>
+                                        <img id="cryptoQR" src="" alt="QR Code">
+                                        <div id="crypto-status" class="status-msg pending" style="margin-top:15px;">Waiting for payment...</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="note">
+                        Carrier Networks LLC &mdash; New Mexico<br>
+                        All payments are processed securely. Crypto payments confirmed on-chain.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="small-print">
+            <div class="container">
+                <a href="http://carriernetworks.net"><p>carriernetworks.net</p></a>
+                <a href="https://carriernetworks.eth.limo"><p>carriernetworks.eth.limo</p></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    <!-- The PayPal SDK is loaded at runtime with the client ID served by the
+         payment API, so no credential is ever committed to this repo. -->
+
+    <script>
+    // ========== CONFIGURATION ==========
+    // Base URL of the Carrier Networks payment API. All credentials live there,
+    // server-side. Never put a PayPal secret or a NOWPayments key in this file:
+    // this is a static site and anything here is public.
+    //
+    // Leave empty to keep online payment switched off — the page then shows the
+    // "contact us to pay" notice instead of broken buttons.
+    var PAYMENT_API = '';
+
+    var payConfig = null;
+
+    function payDisable(msg) {
+        var n = document.getElementById('pay-offline-notice');
+        if (n) {
+            n.textContent = msg;
+            n.style.display = 'block';
+        }
+        var m = document.getElementById('payment-methods');
+        if (m) m.style.display = 'none';
+    }
+
+    function initPayments() {
+        if (!PAYMENT_API) {
+            payDisable('Online payment is being brought online. To settle an invoice today, call or email us from the Contact page and we will send a payment link.');
+            return;
+        }
+        fetch(PAYMENT_API + '/payment/config')
+            .then(function(r) { return r.json(); })
+            .then(function(cfg) {
+                payConfig = cfg;
+                if (cfg.clientId) {
+                    var sdk = document.createElement('script');
+                    sdk.src = 'https://www.paypal.com/sdk/js?client-id=' +
+                        encodeURIComponent(cfg.clientId) +
+                        '&currency=USD&intent=capture&components=buttons';
+                    sdk.onload = initPayPal;
+                    sdk.onerror = function() {
+                        payDisable('Card payment is temporarily unavailable. Please contact us to settle your invoice.');
+                    };
+                    document.head.appendChild(sdk);
+                }
+                if (!cfg.cryptoEnabled) {
+                    var cb = document.getElementById('cryptoPayBtn');
+                    if (cb) {
+                        cb.disabled = true;
+                        cb.textContent = 'Crypto unavailable';
+                    }
+                }
+            })
+            .catch(function() {
+                payDisable('The payment service is unreachable right now. Please contact us to settle your invoice.');
+            });
+    }
+
+    function invoiceRefValue() {
+        var el = document.getElementById('invoiceRef');
+        return (el && el.value) ? el.value : '';
+    }
+
+    // ========== AMOUNT DISPLAY ==========
+    document.getElementById('payAmount').addEventListener('input', function() {
+        var val = parseFloat(this.value) || 0;
+        document.getElementById('totalDisplay').textContent = '$' + val.toFixed(2);
+    });
+
+    // ========== PAYPAL ==========
+    function initPayPal() {
+        if (typeof paypal === 'undefined') return;
+        paypal.Buttons({
+            style: {
+                shape: 'rect',
+                color: 'black',
+                layout: 'vertical',
+                label: 'pay'
+            },
+            createOrder: function(data, actions) {
+                var amount = parseFloat(document.getElementById('payAmount').value);
+                if (!amount || amount < 1) {
+                    alert('Please enter a valid payment amount.');
+                    return;
+                }
+                return fetch(PAYMENT_API + '/payment/create-order', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        amount: amount.toFixed(2),
+                        orderRef: invoiceRefValue(),
+                        description: 'Carrier Networks — ' + (invoiceRefValue() || 'Payment')
+                    })
+                })
+                .then(function(r) { return r.json(); })
+                .then(function(res) {
+                    if (!res.success || !res.orderId) {
+                        throw new Error(res.error || 'Could not start the payment.');
+                    }
+                    return res.orderId;
+                });
+            },
+            onApprove: function(data, actions) {
+                return fetch(PAYMENT_API + '/payment/capture-order', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        orderId: data.orderID,
+                        orderRef: invoiceRefValue()
+                    })
+                })
+                .then(function(r) { return r.json(); })
+                .then(function(res) {
+                    var statusEl = document.getElementById('paypal-status');
+                    if (res.success) {
+                        statusEl.className = 'status-msg success';
+                        statusEl.textContent = 'Payment successful. Reference ' + res.transactionId + ' — thank you. A receipt is on its way from PayPal.';
+                    } else {
+                        statusEl.className = 'status-msg error';
+                        statusEl.textContent = 'We could not confirm that payment. Please contact us before trying again so you are not charged twice.';
+                    }
+                    statusEl.style.display = 'block';
+                });
+            },
+            onError: function(err) {
+                var statusEl = document.getElementById('paypal-status');
+                statusEl.className = 'status-msg error';
+                statusEl.textContent = 'Payment failed. Please try again or contact us.';
+                statusEl.style.display = 'block';
+                console.error('PayPal Error:', err);
+            }
+        }).render('#paypal-button-container');
+    }
+    document.addEventListener('DOMContentLoaded', initPayments);
+
+    // ========== CRYPTO (NOWPayments) ==========
+    var cryptoPaymentId = null;
+    var cryptoPollInterval = null;
+
+    function generateCryptoPayment() {
+        var amount = parseFloat(document.getElementById('payAmount').value);
+        if (!amount || amount < 1) {
+            alert('Please enter a valid payment amount.');
+            return;
+        }
+
+        var currency = document.getElementById('cryptoCurrency').value;
+        var btn = document.getElementById('cryptoPayBtn');
+        btn.disabled = true;
+        btn.textContent = 'Generating...';
+
+        var payload = {
+            amount: amount,
+            currency: currency,
+            orderRef: invoiceRefValue(),
+            description: 'Carrier Networks — ' + (invoiceRefValue() || 'Payment')
+        };
+
+        fetch(PAYMENT_API + '/payment/crypto/create-payment', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        })
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            if (data.success && data.payAddress) {
+                cryptoPaymentId = data.paymentId;
+                document.getElementById('cryptoAmount').textContent = data.payAmount;
+                document.getElementById('cryptoCurrLabel').textContent = String(data.payCurrency).toUpperCase();
+                document.getElementById('cryptoAddress').textContent = data.payAddress;
+                document.getElementById('cryptoQR').src = 'https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=' + encodeURIComponent(data.payAddress);
+                document.getElementById('crypto-info').style.display = 'block';
+
+                btn.textContent = 'Address Generated';
+
+                // Poll for payment status
+                if (cryptoPollInterval) clearInterval(cryptoPollInterval);
+                cryptoPollInterval = setInterval(checkCryptoPayment, 10000);
+            } else {
+                btn.disabled = false;
+                btn.textContent = 'Generate Payment Address';
+                alert('Error: ' + (data.error || 'Could not generate payment. Try again.'));
+            }
+        })
+        .catch(function(err) {
+            btn.disabled = false;
+            btn.textContent = 'Generate Payment Address';
+            alert('Network error. Please try again.');
+            console.error(err);
+        });
+    }
+
+    function checkCryptoPayment() {
+        if (!cryptoPaymentId) return;
+        fetch(PAYMENT_API + '/payment/crypto/check-payment/' + encodeURIComponent(cryptoPaymentId))
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            var statusEl = document.getElementById('crypto-status');
+            if (data.status === 'finished' || data.status === 'confirmed') {
+                statusEl.className = 'status-msg success';
+                statusEl.textContent = 'Payment confirmed! Thank you.';
+                clearInterval(cryptoPollInterval);
+            } else if (data.status === 'partially_paid') {
+                statusEl.className = 'status-msg pending';
+                statusEl.textContent = 'Partial payment received. Please send the remaining amount.';
+            } else if (data.status === 'waiting') {
+                statusEl.className = 'status-msg pending';
+                statusEl.textContent = 'Waiting for payment...';
+            } else if (data.status === 'expired') {
+                statusEl.className = 'status-msg error';
+                statusEl.textContent = 'Payment expired. Please generate a new address.';
+                clearInterval(cryptoPollInterval);
+                document.getElementById('cryptoPayBtn').disabled = false;
+                document.getElementById('cryptoPayBtn').textContent = 'Generate Payment Address';
+            }
+        })
+        .catch(function() {});
+    }
+
+    function copyAddress() {
+        var addr = document.getElementById('cryptoAddress').textContent;
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(addr);
+        } else {
+            var ta = document.createElement('textarea');
+            ta.value = addr;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+        }
+        var btn = document.querySelector('.copy-btn');
+        btn.textContent = 'Copied!';
+        setTimeout(function() { btn.textContent = 'Copy Address'; }, 2000);
+    }
+    </script>
+
+</body>
+</html>
