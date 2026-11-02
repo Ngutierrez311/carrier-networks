@@ -946,3 +946,98 @@ img::-moz-selection {
     font-size: 12px;
     font-weight: 600;
 }
+
+/* ========== HERO KICKER ========== */
+/* States the company framing above the headline. Small, wide-tracked, sitting
+   in the star field where it needs no panel of its own. */
+header .header-content .header-content-inner .hero-kicker {
+    display: block;
+    margin-bottom: 18px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: rgba(0,230,118,0.9);
+    text-shadow: 0 1px 10px rgba(0,0,0,0.9);
+    animation: fadeInUp .8s ease-out;
+}
+
+@media(min-width:768px) {
+    header .header-content .header-content-inner .hero-kicker {
+        font-size: 13px;
+        letter-spacing: 0.42em;
+    }
+}
+
+/* ========== AI BAND ========== */
+/* A full-width statement rather than a fourth card: AI is not a separate thing
+   we sell, it is how both offerings are staffed and run. */
+.ai-band {
+    padding: 70px 0;
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+    border-top: 1px solid rgba(0,230,118,0.16);
+    border-bottom: 1px solid rgba(0,230,118,0.16);
+}
+
+.ai-band .ai-kicker {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(0,230,118,0.8);
+}
+
+.ai-band h2 {
+    margin: 0 0 20px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.ai-band .ai-lede {
+    max-width: 780px;
+    margin-bottom: 44px;
+    font-size: 17px;
+    color: rgba(255,255,255,0.78);
+}
+
+.ai-point {
+    padding-left: 20px;
+    margin-bottom: 26px;
+    border-left: 1px solid rgba(0,230,118,0.3);
+}
+
+.ai-point h4 {
+    margin: 0 0 9px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #00e676;
+}
+
+.ai-point p {
+    margin: 0;
+    font-size: 15px;
+    color: rgba(255,255,255,0.72);
+}
+
+/* Bootstrap 3 floats these, so three cards with different copy lengths end up
+   three different heights. Flex only from the breakpoint where they actually
+   sit side by side; below that they stack and height does not matter. */
+@media (min-width: 992px) {
+    .offering-cards .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .offering-cards .row > [class*="col-"] {
+        display: flex;
+    }
+
+    .offering-cards .offering-card {
+        width: 100%;
+    }
+}
