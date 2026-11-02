@@ -82,166 +82,200 @@ Although you can use them, for a more unique website, replace these images with 
     <section class="content">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 reveal">
+                <div class="col-sm-8 reveal">
                 	<h1 class="section-heading">Offerings</h1>
                     <div class="accent-line" style="margin-left:0;"></div>
+                    <p class="offer-lede">Three ways to engage us. Take one, or run all
+                    three together &mdash; the platform is what the managed service is
+                    delivered on, and the professional services are how it gets built.</p>
                 </div>
             </div>
         </div>
     </section>
 
-	<!-- Content 2 -->
-     <section class="content content-2">
+    <!-- The three offerings -->
+    <section class="offering-cards">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 reveal">
+                    <a class="offering-card" href="#professional-services">
+                        <span class="offering-kicker">Project based</span>
+                        <h3>Professional Services</h3>
+                        <p>Design, build and remediation against a defined scope and a
+                        fixed outcome. Architecture, migration, assessment and
+                        remediation across network, security, server and cloud.</p>
+                    </a>
+                </div>
+                <div class="col-md-4 reveal">
+                    <a class="offering-card" href="#managed-services">
+                        <span class="offering-kicker">Monthly subscription</span>
+                        <h3>Managed Services</h3>
+                        <p>We run it. Live SOC and NOC coverage, log processing and
+                        archival, monitoring, best-practice state enforcement and
+                        engineering support, billed per device per month.</p>
+                    </a>
+                </div>
+                <div class="col-md-4 reveal">
+                    <a class="offering-card" href="#security-platform">
+                        <span class="offering-kicker">Platform</span>
+                        <h3>Security Platform</h3>
+                        <p>The log and detection platform the managed service runs on,
+                        available on its own. Graylog processing in front of an
+                        OpenSearch cluster, all of it orchestrated on Kubernetes.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<!-- Professional Services -->
+     <section class="content content-2" id="professional-services">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 reveal-left">
                     <h1>Professional Services</h1>
                     <div class="accent-line" style="margin-left:0;"></div>
-                    <p>Vendors</p>
-                    <ul>
-                    <li>Security
-                    <ul>
-                    <li>Palo Alto Networks</li>
-                    <li>Fortigate</li>
-                    <li>F5</li>
+                    <p class="offer-lede">Scoped engagements with a defined start and a
+                    defined finish. We work in the platforms you already own.</p>
+
+                    <h3 style="color:#fff; font-size:15px; letter-spacing:.2em; text-transform:uppercase; margin-bottom:18px;">Vendors</h3>
+                    <ul class="offer-list">
+                        <li>Security
+                            <ul>
+                                <li>Palo Alto Networks</li>
+                                <li>Fortinet</li>
+                                <li>F5</li>
+                            </ul>
+                        </li>
+                        <li>Route / Switch
+                            <ul>
+                                <li>Cisco</li>
+                                <li>Juniper</li>
+                                <li>HPE</li>
+                            </ul>
+                        </li>
+                        <li>Automation
+                            <ul>
+                                <li>Ansible</li>
+                            </ul>
+                        </li>
+                        <li>Server
+                            <ul>
+                                <li>Red Hat</li>
+                                <li>Enterprise Linux</li>
+                            </ul>
+                        </li>
+                        <li>Cloud
+                            <ul>
+                                <li>AWS</li>
+                                <li>Azure</li>
+                                <li>Google Cloud</li>
+                            </ul>
+                        </li>
                     </ul>
-                    </li>
-                    <li>Route/Switch</li>
-                    <ul>
-                    <li>Cisco</li>
-                    <li>Juniper</li>
-                    <li>HPE</li>
-                    <li>Linux/Open Source</li>
+
+                    <h3 style="color:#fff; font-size:15px; letter-spacing:.2em; text-transform:uppercase; margin:46px 0 18px;">Solutions</h3>
+                    <ul class="offer-list">
+                        <li>Route / Switch
+                            <ul>
+                                <li>Network architecture</li>
+                                <li>Remote-access VPN</li>
+                                <li>SD-WAN</li>
+                                <li>Best practice assessments</li>
+                            </ul>
+                        </li>
+                        <li>Security
+                            <ul>
+                                <li><span class="offer-group">Edge</span>
+                                    <ul>
+                                        <li>Firewall</li>
+                                        <li>WAF (web application firewall)</li>
+                                        <li>Load balancer</li>
+                                        <li>DNS security</li>
+                                        <li>Reverse proxy / decrypt</li>
+                                    </ul>
+                                </li>
+                                <li>Zero Trust</li>
+                                <li>SASE (secure access service edge)</li>
+                                <li><span class="offer-group">Security triad</span>
+                                    <ul>
+                                        <li>Endpoint</li>
+                                        <li>NDR</li>
+                                        <li>SIEM / XDR</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Linux
+                            <ul>
+                                <li>Ansible automation</li>
+                                <li>Containers and Kubernetes</li>
+                                <li>Best practice assessments</li>
+                            </ul>
+                        </li>
+                        <li>Cloud
+                            <ul>
+                                <li><span class="offer-group">VPC / VNET architecture</span>
+                                    <ul>
+                                        <li>Transit gateway / VNET peering</li>
+                                        <li>Security VPC / VNET</li>
+                                        <li>Overlays</li>
+                                        <li>High availability design</li>
+                                    </ul>
+                                </li>
+                                <li>Hybrid cloud</li>
+                                <li>IaaS</li>
+                                <li>Kubernetes</li>
+                            </ul>
+                        </li>
                     </ul>
-                    <li>Automation
-                    <ul>
-                    <li>Ansible</li>
-                    </ul>
-                    </li>
-                    <li>Server
-                    <ul>
-                    <li>Enterprise Linux</li>
-                    <li>Debian</li>
-                    </ul>
-                    </li>
-                    <li>Cloud
-                    <ul>
-                    <li>AWS</li>
-                    <li>Azure</li>
-                    </ul>
-                    </li>
-                    </ul>
-                    <p><br /><br />Solutions<br /><br /></p>
-                    <ul>
-                    <li>Route/Switch<br />
-                    <ul>
-                    <li>Network Architecture</li>
-                    <li>Remote-Accesss VPN</li>
-                    <li>SD-WAN</li>
-                    <li>Best Practice Assessments</li>
-                    </ul>
-                    </li>
-                    <li>Security
-                    <ul>
-                    <li>Edge <br />
-                    <ul>
-                    <li>Firewall</li>
-                    <li>WAF (Web Application Firewall)</li>
-                    <li>Load Balancer</li>
-                    <li>DNS Security</li>
-                    <li>Reverse Proxy/Decrypt</li>
-                    </ul>
-                    </li>
-                    <li>Zero Trust</li>
-                    <li>SASE (Secure Access Service Edge)</li>
-                    <li>Security Triad
-                    <ul>
-                    <li>Endpoint</li>
-                    <li>NDR</li>
-                    <li>SIEM
-                    <ul>
-                    <li>XDR</li>
-                    </ul>
-                    </li>
-                    </ul>
-                    </li>
-                    </ul>
-                    </li>
-                    </ul>
-                    <ul>
-                    <li>Linux<br />
-                    <ul>
-                    <li>Ansible automation</li>
-                    <li>DNS (bind9)</li>
-                    <li>Containers and Kubernetes</li>
-                    <li>Best Practice Assessments</li>
-                    </ul>
-                    </li>
-                    <li>Cloud
-                    <ul>
-                    <li>Security</li>
-                    <li>VPC/VNET Architecture
-                    <ul>
-                    <li>Transit Gateway/VNET Peering</li>
-                    <li>Security VPC/VNET</li>
-                    <li>Overlays</li>
-                    <li>High Availability Design</li>
-                    </ul>
-                    </li>
-                    <li>Hybrid Cloud</li>
-                    <li>IaaS</li>
-                    <li>Kubernetes</li>
-                    <li>DLP</li>
-                    </ul>
-                    </li>
-                    </ul>                    
-                </div>    
+                </div>
                 <div class="col-sm-6 reveal-right" style="padding-top: 60px;">
                     <img class="img-responsive" src="images/cruisebattle.jpg" alt="" style="margin-bottom: 40px;">
                     <img class="img-responsive" src="images/6207.jpg" alt="">
-                </div>            
+                </div>
             </div>
         </div>
     </section>
 
-	<!-- Content 2 -->
-    <section class="content content-2">
+	<!-- Managed Services -->
+    <section class="content content-2" id="managed-services">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 reveal-left">
-                	<h1 class="section-header">Managed Services</h1>
+                	<h1>Managed Services</h1>
                     <div class="accent-line" style="margin-left:0;"></div>
-                    <ul>
-                        <li>By the the Month</li>
-                          <ul>  
-                          <li>Services</li>
-                                        <ul>
-                                            <li>Live Security Operations Center (SOC)</li>
-                                            <li>Live Network Operations Center (NOC)</li>
-                                            <li>System and security log processing</li>
-                                            <li>Log Archival</li>
-                                            <li>Engineering support</li>
-                                            <li>Best Practice State Enforcement</li>
-                                            <li>Monitoring</li>
-                                        </ul>
-                        </ul>
-                        <br></br>
-                         <ul>
-                         <li>Devices</li> 
-                                        <ul>
-                                    <li>Cisco</li>
-                                    <li>Juniper</li>
-                                    <li>F5</li>
-                                    <li>HP</li>
-                                    <li>Palo Alto Networks</li>
-                                    <li>AWS</li>
-                                    <li>Azure</li>                              
-                                    <li>Enterprise Linux</li>
-                                    <li>Debian</li>
-                                    <li>EDR/NDR/SIEM</li>
-                                        </ul>
-                        </ul>
-                </div>    
+                    <p class="offer-lede">Billed by the month, per device. Coverage is
+                    continuous and the state of your estate is enforced rather than
+                    audited once a year.</p>
+                    <ul class="offer-list">
+                        <li>Services
+                            <ul>
+                                <li>Live security operations center (SOC)</li>
+                                <li>Live network operations center (NOC)</li>
+                                <li>System and security log processing</li>
+                                <li>Log archival</li>
+                                <li>Engineering support</li>
+                                <li>Best practice state enforcement</li>
+                                <li>Monitoring</li>
+                            </ul>
+                        </li>
+                        <li>Devices under management
+                            <ul>
+                                <li>Cisco</li>
+                                <li>Juniper</li>
+                                <li>F5</li>
+                                <li>HPE</li>
+                                <li>Palo Alto Networks</li>
+                                <li>AWS</li>
+                                <li>Azure</li>
+                                <li>Google Cloud</li>
+                                <li>Red Hat Enterprise Linux</li>
+                                <li>EDR / NDR / SIEM</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
                 <div class="col-sm-6 reveal-right">
                     <img class="img-responsive img-circle center-block" src="images/6392.jpg" alt="">
                 </div>
@@ -249,27 +283,180 @@ Although you can use them, for a more unique website, replace these images with 
         </div>
     </section>
 
-	<!-- Content 2 -->
-    <section class="content content-2">
+	<!-- Security Platform -->
+    <section class="content content-2" id="security-platform">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 reveal-left">
-                	<h1 class="section-header">Offensive Security</h1>
+                	<h1>Security Platform</h1>
                     <div class="accent-line" style="margin-left:0;"></div>
-                    <ul>
-                       <li>Penetration Testing</li>
-                       <li>Audit Compliance</li>
-                       <li>Security Architecture Remediation</li>
+                    <p class="offer-lede">The platform our managed SOC runs on, offered
+                    on its own. It is built to take everything an estate emits &mdash;
+                    firewall, endpoint, flow, cloud audit, application &mdash; rather
+                    than a sampled subset chosen to fit a licence.</p>
+
+                    <ol class="platform-stack">
+                        <li>
+                            <span class="tier-name">Collection</span>
+                            <span class="tier-detail">Syslog, agents, flow records and
+                            cloud audit trails from network, endpoint, server and SaaS.
+                            Nothing is dropped at the edge to make a quota.</span>
+                        </li>
+                        <li>
+                            <span class="tier-name">Processing &mdash; Graylog</span>
+                            <span class="tier-detail">Graylog nodes parse, normalise,
+                            enrich and route. The node count scales horizontally with
+                            volume, so ingest rate is a capacity decision rather than a
+                            ceiling.</span>
+                        </li>
+                        <li>
+                            <span class="tier-name">Search and retention &mdash; OpenSearch</span>
+                            <span class="tier-detail">An OpenSearch cluster holds hot
+                            and warm tiers for interactive search, with policy-driven
+                            rollover into long-term archival for compliance retention.</span>
+                        </li>
+                        <li>
+                            <span class="tier-name">Orchestration &mdash; Kubernetes</span>
+                            <span class="tier-detail">Kubernetes front-ends the
+                            OpenSearch cluster and runs every tier above it: ingress,
+                            scaling, rolling upgrade, failure replacement and tenant
+                            isolation.</span>
+                        </li>
+                    </ol>
+
+                    <ul class="offer-list" style="margin-top:34px;">
+                        <li>What it delivers
+                            <ul>
+                                <li>Detection and alerting into the SOC workflow</li>
+                                <li>Full-fidelity search across retained data</li>
+                                <li>Retention and archival evidence for audit</li>
+                                <li>Dashboards and API access for your own teams</li>
+                            </ul>
+                        </li>
+                        <li>How it is run
+                            <ul>
+                                <li>Dedicated or multi-tenant</li>
+                                <li>Hosted by us, or deployed into your cloud or data centre</li>
+                                <li>Capacity sized to ingest rate and retention window</li>
+                            </ul>
+                        </li>
                     </ul>
-                        </ul>
-                        </ul>
-                </div>      
-                <div class="col-sm-6 reveal-right">
-                    <img class="img-responsive img-circle center-block" src="images/siege.jpg" alt="">
-                </div>            
+                </div>
+                <div class="col-sm-6 reveal-right" style="padding-top: 60px;">
+                    <!-- Drawn here rather than shipped as an image file. The slot
+                         previously held images/shield.jpg, which is a watermarked
+                         VectorStock comp -- "VectorStock.com/15715661" is printed
+                         across the bottom of it -- and must not appear on a page that
+                         sells anything. An inline SVG also stays out of
+                         containers/skynet/k8s/deploy.sh's copy list, which is the
+                         mechanism that let a stale pay.html survive for months. -->
+                    <svg class="platform-diagram" viewBox="0 0 560 506" role="img"
+                         aria-labelledby="pd-title pd-desc">
+                        <title id="pd-title">Security Platform architecture</title>
+                        <desc id="pd-desc">Firewall, endpoint, flow and cloud audit
+                        sources feed Graylog processing nodes, which write to an
+                        OpenSearch cluster. Both tiers run on Kubernetes, and
+                        OpenSearch rolls data over into long-term archive.</desc>
+
+                        <!-- sources -->
+                        <g class="pd-chip">
+                            <rect x="14"  y="12" width="124" height="38" rx="3"/>
+                            <rect x="150" y="12" width="124" height="38" rx="3"/>
+                            <rect x="286" y="12" width="124" height="38" rx="3"/>
+                            <rect x="422" y="12" width="124" height="38" rx="3"/>
+                        </g>
+                        <g class="pd-label">
+                            <text x="76"  y="36" text-anchor="middle">Firewall</text>
+                            <text x="212" y="36" text-anchor="middle">Endpoint</text>
+                            <text x="348" y="36" text-anchor="middle">Flow</text>
+                            <text x="484" y="36" text-anchor="middle">Cloud audit</text>
+                        </g>
+
+                        <g class="pd-flow">
+                            <path d="M76 50 V86"/>
+                            <path d="M212 50 V86"/>
+                            <path d="M348 50 V86"/>
+                            <path d="M484 50 V86"/>
+                        </g>
+
+                        <!-- kubernetes boundary -->
+                        <rect class="pd-boundary" x="4" y="96" width="552" height="312" rx="5"/>
+                        <text class="pd-boundary-label" x="22" y="121">KUBERNETES</text>
+
+                        <!-- graylog tier -->
+                        <g class="pd-node">
+                            <rect x="24"  y="140" width="160" height="52" rx="3"/>
+                            <rect x="200" y="140" width="160" height="52" rx="3"/>
+                            <rect x="376" y="140" width="160" height="52" rx="3"/>
+                        </g>
+                        <g class="pd-node-label">
+                            <text x="104" y="171" text-anchor="middle">Graylog</text>
+                            <text x="280" y="171" text-anchor="middle">Graylog</text>
+                            <text x="456" y="171" text-anchor="middle">Graylog</text>
+                        </g>
+                        <text class="pd-caption" x="280" y="212" text-anchor="middle">parse &#183; normalise &#183; enrich &#183; route &#8212; scales out with volume</text>
+
+                        <g class="pd-flow">
+                            <path d="M104 224 V252"/>
+                            <path d="M280 224 V252"/>
+                            <path d="M456 224 V252"/>
+                        </g>
+
+                        <!-- opensearch tier -->
+                        <g class="pd-node pd-node-store">
+                            <rect x="14"  y="262" width="124" height="52" rx="3"/>
+                            <rect x="150" y="262" width="124" height="52" rx="3"/>
+                            <rect x="286" y="262" width="124" height="52" rx="3"/>
+                            <rect x="422" y="262" width="124" height="52" rx="3"/>
+                        </g>
+                        <g class="pd-node-label pd-node-label-sm">
+                            <text x="76"  y="293" text-anchor="middle">OpenSearch</text>
+                            <text x="212" y="293" text-anchor="middle">OpenSearch</text>
+                            <text x="348" y="293" text-anchor="middle">OpenSearch</text>
+                            <text x="484" y="293" text-anchor="middle">OpenSearch</text>
+                        </g>
+                        <text class="pd-caption" x="280" y="334" text-anchor="middle">hot and warm tiers &#8212; interactive search across retained data</text>
+                        <text class="pd-caption" x="280" y="362" text-anchor="middle">Kubernetes front-ends the cluster: ingress, scaling,</text>
+                        <text class="pd-caption" x="280" y="380" text-anchor="middle">rolling upgrade, failure replacement, tenant isolation</text>
+
+                        <g class="pd-flow">
+                            <path d="M280 408 V440"/>
+                        </g>
+
+                        <!-- archive -->
+                        <rect class="pd-archive" x="150" y="450" width="260" height="46" rx="3"/>
+                        <text class="pd-node-label" x="280" y="479" text-anchor="middle">Long-term archive</text>
+                    </svg>
+                </div>
             </div>
         </div>
-    </section>    
+    </section>
+
+	<!-- Offensive Security -->
+    <section class="content content-2" id="offensive-security">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 reveal-left">
+                	<h1>Offensive Security</h1>
+                    <div class="accent-line" style="margin-left:0;"></div>
+                    <p class="offer-lede">Find it before someone else does, then fix
+                    what was found.</p>
+                    <ul class="offer-list">
+                        <li>Engagements
+                            <ul>
+                                <li>Penetration testing</li>
+                                <li>Audit compliance</li>
+                                <li>Security architecture remediation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 reveal-right">
+                    <img class="img-responsive img-circle center-block" src="images/siege.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <hr class="glow-separator">
 	<div class="container-fluid">
@@ -303,8 +490,7 @@ Although you can use them, for a more unique website, replace these images with 
      <section class="content content-3">
         <div class="container">
 			<h2 class="section-header"><br></h2>
-			<p class="lead text-muted"></p>               
-            </div>  
+			<p class="lead text-muted"></p>
         </div>
     </section>
     
