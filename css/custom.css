@@ -1041,3 +1041,22 @@ header .header-content .header-content-inner .hero-kicker {
         width: 100%;
     }
 }
+
+/* Equal-height grids for .ai-point tiles. Bootstrap 3 floats col-md-4, so three
+   tiles of different copy length wrap raggedly -- a short tile lets the next one
+   ride up beside it instead of starting a clean row. Flex only from the
+   breakpoint where they sit side by side; below that they stack anyway. */
+@media (min-width: 992px) {
+    .cap-grid {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .cap-grid > [class*="col-"] {
+        display: flex;
+    }
+
+    .cap-grid .ai-point {
+        width: 100%;
+    }
+}
